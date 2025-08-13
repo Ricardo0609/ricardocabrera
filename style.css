@@ -128,7 +128,7 @@ header {
 
 /*cards*/
 .card {
-    width: 19vw;
+    width: 18vw;
     background-color: var(--blanco);
     border-radius: 8px;
     display: flex;
@@ -169,6 +169,9 @@ a button {
     font-size: 1.2em;
     font-family: var(--parrafos);
     padding: 10px;
+}
+button:hover{
+cursor: pointer;
 }
 
 footer {

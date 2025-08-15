@@ -15,10 +15,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Electrolize&display=swap" rel="stylesheet">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <link rel="icon" href="https://cdn.glitch.global/069254cb-f67b-48d3-bd8e-7c561ccb30ec/rLogo.png?v=1693697211884">
 <header>
-    <a class="enlace_seccion" href="#sobre-mi">Sobre Mi</a>
+
+    <a class="enlace_seccion" href="#procesDis">Proceso de diseño</a>
     <a class="enlace_seccion" href="#proyectos">Proyectos</a>
     <a class="enlace_seccion" href="#Aptitudes">Aptitudes</a>
 
@@ -40,26 +44,100 @@
     </section>
 
 
+
+
     <!--Quien soy-->
     <section class="division" id="sobre-mi">
         <h1 class="titulo__division">¿Quien soy?</h1>
         <p class="texto__sobre-mi">
-            Tengo 18 años y descubrí mi pasión por la tecnología a los 15, cuando comencé a aprender programación de
-            forma autodidacta. Desde entonces, he dedicado tiempo y esfuerzo a mejorar mis aptitudes en programación y
-            diseño. Como programador junior, he adquirido conocimientos en lenguajes como HTML, CSS y JavaScript, lo que
-            me permite crear sitios web y aplicaciones con interfaces atractivas y fáciles de usar. He realizado algunos
-            pequeños proyectos personales y otros para amigos y conocidos. Sé que apenas estoy empezando, pero tengo
-            muchas ganas de aprender y ganar experiencia. Esta poca experiencia que tengo me ha servido para hacer
-            proyectos de la mejor calidad.
+            Desde los 15 años me apasiona la tecnología y el diseño. Inicié aprendiendo programación de forma
+            autodidacta, y con el tiempo me especialicé en diseño UX/UI, creando interfaces atractivas, funcionales y
+            centradas en el usuario.
+
+            Domino HTML y CSS para llevar diseños a la web con precisión, y utilizo JavaScript a nivel intermedio para
+            agregar interactividad. Mi enfoque está en crear experiencias claras, intuitivas y visualmente cuidadas,
+            combinando estética y usabilidad en cada proyecto.
+
+            En mi portafolio encontrarás ejemplos donde aplico investigación, wireframes, prototipado y diseño final,
+            siempre cuidando cada detalle para lograr productos digitales que las personas disfruten usar.
         </p>
         <p class="texto__sobre-mi">
-            En lo que más me especializo es en la creación de interfaces de usuario con UX/UI. Tengo más experiencia en
-            eso, utilizando HTML y CSS. Mi experiencia con JavaScript es intermedia; sé usarlo, pero sigo aprendiendo
-            cada día. Sin embargo, mi enfoque principal es en lo visual: cómo acomodar los elementos para que se vean
-            sencillos y fáciles de usar. En todos los proyectos que he hecho se puede notar la dedicación al detalle,
-            creando sitios que sean visualmente agradables y, a la vez, fáciles de usar, sin perder un solo detalle. Esa
-            es mi especialidad.
+
         </p>
+    </section>
+
+    <!--Procesode diseño-->
+    <section class="division" id="procesDis">
+
+        <h1 class="titulo__division">PROCESO DE DISEÑO</h1>
+
+        
+ 
+
+  <dl>
+     <p>Mi flujo de trabajo sigue una estructura clara que combina creatividad y método:</p>
+    <dt><strong>1-Identificación del problema</strong></dt>
+    <dd>Pienso en una necesidad real o herramienta útil para mi día a día que también pueda ayudar a otras personas.</dd>
+
+    <dt><strong>2-Definición de características</strong></dt>
+    <dd>Hago una lista de funcionalidades clave que el producto debe tener.</dd>
+
+    <dt><strong>3-Sketch inicial</strong></dt>
+    <dd>Creo un esquema rápido en Miro para definir la disposición de los elementos.</dd>
+
+    <dt><strong>4-Diseño visual</strong></dt>
+    <dd>Selecciono paleta de colores, tipografías y estilo general.</dd>
+
+    <dt><strong>5-Mockup y prototipado</strong></dt>
+    <dd>Trabajo en Figma creando componentes reutilizables y armando el prototipo como un “rompecabezas” visual.</dd>
+
+    <dt><strong>6-Desarrollo en código</strong></dt>
+    <dd>Implemento primero la estructura estática (HTML y CSS), asegurando un diseño adaptable a distintos dispositivos. Luego añado interactividad y funcionalidades con JavaScript.</dd>
+  </dl>
+
+  <!--Carrusel-->
+<br>
+<br>
+
+<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+      <img src="lista.png" class="d-block " alt="...">
+    </div>
+
+    <div class="carousel-item">
+      <img src="sketch.png" class="d-block " alt="...">
+    </div>
+
+    <div class="carousel-item">
+      <img src="componentes.png" class="d-block " alt="...">
+    </div>
+
+
+    <div class="carousel-item">
+      <img src="prototipo.png" class="d-block " alt="...">
+    </div>
+
+    <div class="carousel-item">
+      <img src="codigo.png" class="d-block " alt="...">
+    </div>
+
+
+
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+
+
     </section>
 
     <!--Proyectos-->
@@ -100,29 +178,29 @@
         </div>
 
         <div class="card">
-            <img src="Certificados.png" alt="" class="img__card">
+            <img src="certificados.png" alt="" class="img__card">
             <h1 class="titulo__card">Certificados</h1>
             <p class="descripcion__card">Son los diplomas de algunos cursos que he tomado, las habilidades y
                 conocimientos que tengo.</p>
-            <a target="_blank" href="https://certificadosric.onrender.com/"><button>Ver</button></a>
+            <a target="_blank" href="https://certificados.glitch.me/"><button>Ver</button></a>
         </div>
 
 
 
 
         <div class="card">
-            <img src="Brewster.png" alt="" class="img__card">
+            <img src="brewster.png" alt="" class="img__card">
             <h1 class="titulo__card">BREWSTER</h1>
             <p class="descripcion__card">BREWSTER es unsitio web donde encontraras todo acerca de coches y noticas
                 historias de cada marca y todos sus modelos.</p>
-            <a target="_blank" href="https://brewster.onrender.com/"><button>Ver</button></a>
+            <a target="_blank" href="https://brewster.glitch.me/"><button>Ver</button></a>
         </div>
         <div class="card">
             <img src="listifyLogo.png" alt="" class="img__card">
             <h1 class="titulo__card">Listify</h1>
             <p class="descripcion__card">Es un pequeño proyecto para tener un seguimiento de cosas por hacer, maratones
                 de películas, lugares por visitar etc.</p>
-            <a target="_blank" href="https://listify-0nkt.onrender.com/"><button>Ver</button></a>
+            <a target="_blank" href="https://brewster.glitch.me/"><button>Ver</button></a>
         </div>
 
         <div class="card">
@@ -138,12 +216,12 @@
             <h1 class="titulo__card">Transmisiones Amaya</h1>
             <p class="descripcion__card">Es un negocio familiar sobre cambio y reparación de
                 transmisiones automáticas.</p>
-            <a target="_blank" href="https://transmisionesamaya.onrender.com/"><button>Ver</button></a>
+            <a target="_blank" href="https://transmisionesamaya.com/"><button>Ver</button></a>
         </div>
 
 
 
-   
+
 
 
     </section>
@@ -212,5 +290,4 @@
 </footer>
 
 </html>
-
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>

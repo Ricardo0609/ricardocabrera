@@ -39,8 +39,10 @@ header {
 
 .enlace_seccion {
     color: var(--blanco);
-    text-decoration: none;
+  text-decoration-color: var(--azul);
+  text-decoration-thickness: 3px;
     font-size: 1.5vw;
+    text-align: center;
     font-family: var(--parrafos);
 }
 
@@ -62,7 +64,6 @@ header {
 
 .foto-mia {
     width: 15vw;
-
     border-radius: 50%;
     margin: 1vw 0;
 }
@@ -93,7 +94,7 @@ header {
 
 .bi {
     color: var(--blanco);
-    font-size: 1.5vw;
+    font-size: 3vw;
 }
 
 /*divisiones*/

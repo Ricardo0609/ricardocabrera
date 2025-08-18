@@ -121,10 +121,10 @@ header {
 }
 
 #proyectos {
-    background-color: var(--rojo);
+    background-color: var(--azul);
 }
 #procesDis{
-    background-color: var(--rojo);
+    background-color: var(--azul);
     color: var(--blanco);
     gap: 3vw;
 }
@@ -276,14 +276,14 @@ footer {
     }
 
     #proyectos {
-        background-color: var(--rojo);
+        background-color: var(--azul);
     }
 
     #habilidades {
         background-color: var(--gris);
     }
 #procesDis{
-    background-color: var(--rojo);
+    background-color: var(--azul);
     color: var(--blanco);
     gap: 3vw;
 }

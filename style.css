@@ -63,7 +63,7 @@ header {
 }
 
 .foto-mia {
-    width: 15vw;
+    width: 12vw;
     border-radius: 50%;
     margin: 1vw 0;
 }
@@ -369,3 +369,4 @@ font-family: var(--parrafos);
     }
    
 }
+

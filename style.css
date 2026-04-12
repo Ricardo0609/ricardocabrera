@@ -177,7 +177,7 @@ dd {
 
 .img__card {
     width: 100%;
-    height: 13vw;
+    height: 15vw;
     object-fit: cover; /* Mantiene la proporción de la imagen */
     border-radius: 16px 16px 0 0;
 }

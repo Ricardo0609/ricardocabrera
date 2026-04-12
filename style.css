@@ -24,42 +24,48 @@ body {
     background-color: var(--negro);
 }
 
-/*header*/
-header {
+/* Configuración Global */
+* {
     box-sizing: border-box;
+}
 
+/* Variables de fuente y colores (Asegúrate de tenerlas definidas en :root) */
+
+/* Header */
+header {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 5vw;
     padding: 2vw;
-
     background-color: var(--negro);
 }
 
 .enlace_seccion {
     color: var(--blanco);
-  text-decoration-color: var(--azul);
-  text-decoration-thickness: 3px;
+    text-decoration-color: var(--azul);
+    text-decoration-thickness: 3px;
     font-size: 1.5vw;
     text-align: center;
     font-family: var(--parrafos);
+    transition: color 0.3s ease;
 }
 
 .enlace_seccion:hover {
     color: var(--gris);
-
 }
 
-/*introducción*/
-.intro {
-    box-sizing: border-box;
+/* Introducción */
+.intro, .division {
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     background-color: var(--negro);
+}
+
+.intro {
+    align-items: center;
 }
 
 .foto-mia {
@@ -68,25 +74,21 @@ header {
     margin: 1vw 0;
 }
 
-.nombre,
-.puesto {
+.nombre, .puesto {
     width: 100%;
     margin: 1vw 0;
     text-align: center;
     color: var(--blanco);
     font-size: 2vw;
     padding: 0;
-    font-family: var(--titulos);
 }
 
-.puesto {
-    font-family: var(--parrafos);
-}
+.nombre { font-family: var(--titulos); }
+.puesto { font-family: var(--parrafos); }
 
-/*iconos*/
+/* Redes Sociales */
 .redes {
     display: flex;
-    float: right;
     justify-content: center;
     gap: 1vw;
     margin: 1vw 0;
@@ -95,25 +97,19 @@ header {
 .bi {
     color: var(--blanco);
     font-size: 3vw;
-    
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .bi:hover {
     color: var(--gris);
-  transform: translateY(-4px);
+    transform: translateY(-4px);
 }
-/*divisiones*/
+
+/* Divisiones de sección */
 .division {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: flex-start; /* 'top' corregido a 'flex-start' */
     gap: 3vw 6vw;
-    box-sizing: border-box;
-    background-color: var(--negro);
     padding: 2vw 5vw;
-    
 }
 
 .titulo__division {
@@ -126,27 +122,26 @@ header {
     text-decoration: overline var(--blanco);
 }
 
-#proyectos,#aptitudes {
+#proyectos, #aptitudes {
     background-color: var(--azul);
 }
-#procesDis{
+
+#procesDis {
     background-color: var(--negro);
     color: var(--blanco);
     gap: 3vw;
 }
-dl p ,strong{
-font-size: 2vw;
-font-family: var(--titulos);
-}
-dd{
-    font-size: 1vw;
-font-family: var(--parrafos);
-}
-.carousel,  .carousel img {
-    width: 50vw;
-    border-radius: 16px;
+
+/* Listas de descripción y textos */
+dl p, strong {
+    font-size: 2vw;
+    font-family: var(--titulos);
 }
 
+dd {
+    font-size: 1vw;
+    font-family: var(--parrafos);
+}
 
 .texto__sobre-mi {
     color: var(--blanco);
@@ -156,41 +151,43 @@ font-family: var(--parrafos);
     margin: -3vw 0 3vw 0;
 }
 
-/*cards*/
+/* Media (Carousel) */
+.carousel, .carousel img {
+    width: 50vw;
+    border-radius: 16px;
+}
+
+/* Cards */
 .carrd {
     width: 18vw;
     background-color: var(--blanco);
     border-radius: 16px !important;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Cambiado para mejor control de elementos internos */
     align-items: center;
-    flex-wrap: wrap;
-    box-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.3),   /* sombra oscura para contraste */
-    0 0 12px rgba(255, 255, 255, 0.15); /* brillo suave para resaltar */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 12px rgba(255, 255, 255, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding-bottom:1vw;
 }
+
 .carrd:hover {
-  transform: translateY(-4px);
-  box-shadow: 
-    0 8px 16px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(255, 255, 255, 0.25);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 255, 255, 0.25);
 }
 
 .img__card {
     width: 100%;
     height: 13vw;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-radius: 16px 16px 0 0;
 }
 
 .titulo__card {
     color: var(--negro);
     font-family: var(--titulos);
     font-size: 2vw;
-  text-align: center;
-  margin-top: 2vw;
+    text-align: center;
+    margin-top: 2vw;
 }
 
 .descripcion__card {
@@ -201,29 +198,33 @@ font-family: var(--parrafos);
     margin-top: -0.5vw;
 }
 
-a button {
+/* Botones */
+button {
     border: none;
-    border-radius: 8px;
-    width: 5vw;
-    margin: 0vw 0 1vw 0;
+    border-radius: 10px !important;
+    width: auto; /* Más flexible que 5vw para texto */
+    min-width: 5vw;
+    margin-bottom: 1vw;
     color: var(--blanco);
     background-color: var(--negro);
     font-size: 1.2em;
     font-family: var(--parrafos);
-    padding: 10px;
-}
-button:hover{
-cursor: pointer;
-background-color: black;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
+button:hover {
+    background-color: #1a1a1a; /* Un negro ligeramente distinto para el feedback */
+}
+
+/* Footer */
 footer {
     color: var(--blanco);
     font-family: var(--parrafos);
     background-color: var(--negro);
     width: 100%;
     padding: 3vw;
-    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -231,27 +232,17 @@ footer {
     text-align: center;
     gap: 8vw;
 }
-.info-footer{
-    margin: 0;
-}
 
-il{
+.info-footer { margin: 0; }
+
+li { /* Corregido de 'il' a 'li' */
     font-weight: bold;
     font-family: var(--titulos);
     font-size: 1.2rem;
+    list-style: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
+/* Aptitudes */
 .aptitudes__container {
     display: flex;
     flex-direction: column;
@@ -280,21 +271,28 @@ il{
 
 .aptitud {
     padding: 0.5rem 0.9rem;
-    border-radius: 5vw;
+    border-radius: 50px; /* Simplificado de 5vw */
     font-family: var(--parrafos);
     background-color: var(--negro);
     color: var(--blanco);
     font-size: 1.2rem;
-    transition: all 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: default;
 }
 
 .aptitud:hover {
     transform: translateY(-4px);
-  box-shadow: 
-    0 8px 16px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 255, 255, 0.25);
+}
+il{
+    font-family: var(--titulos);
+    font-size: 1.5rem;
 
+}
+li{
+    font-family: var(--parrafos);
+     font-size: 1rem;
+     font-weight: 500;
 }
 
 

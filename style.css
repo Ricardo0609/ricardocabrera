@@ -63,23 +63,10 @@ header {
 }
 
 .foto-mia {
-    width: 12vw;
+    width: 10vw;
     border-radius: 50%;
     margin: 1vw 0;
-box-shadow: 
-    0 4px 8px rgba(0, 0, 0, 0.3),   /* sombra oscura para contraste */
-    0 0 12px rgba(255, 255, 255, 0.15); /* brillo suave para resaltar */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.foto-mia:hover {
-  transform: translateY(-4px);
-  box-shadow: 
-    0 8px 16px rgba(0, 0, 0, 0.35),
-    0 0 20px rgba(255, 255, 255, 0.25);
-}
-
-
 
 .nombre,
 .puesto {
@@ -101,7 +88,7 @@ box-shadow:
     display: flex;
     float: right;
     justify-content: center;
-    gap: 2vw;
+    gap: 1vw;
     margin: 1vw 0;
 }
 
@@ -122,7 +109,7 @@ box-shadow:
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 6vw;
+    gap: 3vw 6vw;
     box-sizing: border-box;
     background-color: var(--negro);
     padding: 2vw 5vw;
@@ -139,11 +126,11 @@ box-shadow:
     text-decoration: overline var(--blanco);
 }
 
-#proyectos {
+#proyectos,#aptitudes {
     background-color: var(--azul);
 }
 #procesDis{
-    background-color: var(--azul);
+    background-color: var(--negro);
     color: var(--blanco);
     gap: 3vw;
 }
@@ -160,9 +147,6 @@ font-family: var(--parrafos);
     border-radius: 16px;
 }
 
-#habilidades {
-    background-color: var(--gris);
-}
 
 .texto__sobre-mi {
     color: var(--blanco);
@@ -251,8 +235,67 @@ footer {
     margin: 0;
 }
 
+il{
+    font-weight: bold;
+    font-family: var(--titulos);
+    font-size: 1.2rem;
+}
 
 
+
+
+
+
+
+
+
+
+
+
+.aptitudes__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.aptitudes__bloque {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.aptitudes__titulo {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-family: var(--titulos);
+    color: var(--blanco);
+}
+
+.aptitudes__lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.aptitud {
+    padding: 0.5rem 0.9rem;
+    border-radius: 5vw;
+    font-family: var(--parrafos);
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.aptitud:hover {
+    transform: translateY(-4px);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.35),
+    0 0 20px rgba(255, 255, 255, 0.25);
+
+}
 
 
 
@@ -382,5 +425,3 @@ font-family: var(--parrafos);
     }
    
 }
-
-

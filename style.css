@@ -19,7 +19,9 @@ body {
     background: linear-gradient(135deg, #2d1e2f 20%, #3e2f5b 50%, #4e2a4f 100%);
     min-height: 100vh;
 }
-
+ul{
+    padding-left:1rem;
+}
 html {
     scroll-behavior: smooth;
 }

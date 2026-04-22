@@ -1,95 +1,108 @@
-* {
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*,
+*::before,
+*::after {
     margin: 0;
-    box-sizing: border-box;
     padding: 0;
-    font-family: sans-serif;
+    box-sizing: border-box;
 }
 
+/* ============================================
+   VARIABLES
+   ============================================ */
 :root {
     --negro: #252525;
     --blanco: #ffffff;
     --gris: #98989E;
-    --azul: #2153be;
-    --parrafos: "Koulen", sans-serif;
-    --titulos: "Electrolize", sans-serif;
-
+    --font-parrafos: "Koulen", sans-serif;
+    --font-titulos: "Electrolize", sans-serif;
+    --bg-gradient: linear-gradient(135deg, #2d1e2f 20%, #3e2f5b 50%, #4e2a4f 100%);
+    --accent: #4e2a4f;
 }
 
-body {
-    background: linear-gradient(135deg, #2d1e2f 20%, #3e2f5b 50%, #4e2a4f 100%);
-    min-height: 100vh;
-}
-ul{
-    padding-left:1rem !important;
-}
+/* ============================================
+   GLOBAL
+   ============================================ */
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    background-color: var(--negro);
+    background: var(--bg-gradient);
+    background-color: var(--negro); /* fallback */
+    min-height: 100vh;
 }
 
-/* Configuración Global */
-* {
-    box-sizing: border-box;
+ul {
+    padding: 1rem !important;
 }
 
-/* Variables de fuente y colores (Asegúrate de tenerlas definidas en :root) */
+/* ============================================
+   TIPOGRAFÍA BASE
+   ============================================ */
+li {
+    font-family: var(--font-parrafos);
+    font-size: 1rem;
+    font-weight: 500;
+    list-style: none;
+}
 
-/* Header */
+dl p,
+strong {
+    font-size: 2vw;
+    font-family: var(--font-titulos);
+}
+
+dd {
+    font-size: 1vw;
+    font-family: var(--font-parrafos);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
 header {
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 5vw;
     padding: 2vw;
-
 }
 
 .enlace_seccion {
     padding: 0.5rem 0.9rem;
-    border: 3px solid white;
+    border: 3px solid var(--blanco);
     border-radius: 50px;
-    /* Simplificado de 5vw */
-    font-family: var(--parrafos);
-
+    font-family: var(--font-parrafos);
     color: var(--blanco);
     font-size: 1.2rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease,
+                transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .enlace_seccion:hover {
     background-color: var(--blanco);
     color: #2d1e2f;
-    transform: translateY(-4px);
-    border: 3.5px solid white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75), 0 0 20px rgba(48, 48, 48, 0.25);
-    transition: 0.2s;
-    cursor: pointer;
     font-weight: 500;
-
+    border-width: 3.5px;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75),
+                0 0 20px rgba(48, 48, 48, 0.25);
 }
 
-
-
-
-
-
-
-
-
-/* Introducción */
+/* ============================================
+   INTRO
+   ============================================ */
 .intro,
 .division {
     width: 100%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
 }
 
 .intro {
@@ -109,18 +122,19 @@ header {
     text-align: center;
     color: var(--blanco);
     font-size: 2vw;
-    padding: 0;
 }
 
 .nombre {
-    font-family: var(--titulos);
+    font-family: var(--font-titulos);
 }
 
 .puesto {
-    font-family: var(--parrafos);
+    font-family: var(--font-parrafos);
 }
 
-/* Redes Sociales */
+/* ============================================
+   REDES SOCIALES
+   ============================================ */
 .redes {
     display: flex;
     justify-content: center;
@@ -139,10 +153,11 @@ header {
     transform: translateY(-4px);
 }
 
-/* Divisiones de sección */
+/* ============================================
+   SECCIONES / DIVISIONES
+   ============================================ */
 .division {
     align-items: flex-start;
-    /* 'top' corregido a 'flex-start' */
     gap: 3vw 6vw;
     padding: 2vw 5vw;
 }
@@ -151,154 +166,108 @@ header {
     width: 100%;
     text-align: center;
     color: var(--blanco);
-    font-family: var(--titulos);
+    font-family: var(--font-titulos);
     font-size: 3vw;
-    margin: 0;
     text-decoration: overline var(--blanco);
+    transition: color 0.4s ease;
 }
 
 .titulo__division:hover {
     color: var(--gris);
-    transition: 0.4s;
 }
-
 
 #procesDis {
     color: var(--blanco);
     gap: 3vw;
 }
 
-/* Listas de descripción y textos */
-dl p,
-strong {
-    font-size: 2vw;
-    font-family: var(--titulos);
-}
-
-dd {
-    font-size: 1vw;
-    font-family: var(--parrafos);
-}
-
 .texto__sobre-mi {
     color: var(--blanco);
     font-size: 2vw;
     text-align: left;
-    font-family: var(--parrafos);
+    font-family: var(--font-parrafos);
 }
 
-/* Media (Carousel) */
+/* ============================================
+   CAROUSEL
+   ============================================ */
 .carousel,
 .carousel img {
     width: 50vw;
     border-radius: 16px;
 }
 
-/* Cards */
+/* ============================================
+   CARDS
+   ============================================ */
 .carrd {
     width: 18vw;
     background-color: var(--blanco);
-    border-radius: 25px !important;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
-    /* Cambiado para mejor control de elementos internos */
     align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 12px rgba(255, 255, 255, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     padding-bottom: 1vw;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
+                0 0 12px rgba(255, 255, 255, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .carrd:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75), 0 0 30px rgba(48, 48, 48, 0.45);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75),
+                0 0 30px rgba(48, 48, 48, 0.45);
 }
 
 .img__card {
     width: 100%;
     height: 15vw;
     object-fit: cover;
-    /* Mantiene la proporción de la imagen */
     border-radius: 25px 25px 0 0;
 }
 
 .titulo__card {
     color: var(--negro);
-    font-family: var(--titulos);
+    font-family: var(--font-titulos);
     font-size: 2vw;
     text-align: center;
     margin-top: 2vw;
 }
 
 .descripcion__card {
-   color: var(--negro);
-    font-family: var(--parrafos);
-    padding: 0 2vw;
+    color: var(--negro);
+    font-family: var(--font-parrafos);
     font-size: 1vw;
+    padding: 5vw 2vw;
     margin-top: -0.5vw;
 }
 
-/* Botones */
+/* ============================================
+   BOTONES
+   ============================================ */
 button {
     border: 3px solid var(--negro);
-    border-radius: 50px !important;
-    width: auto;
-    /* Más flexible que 5vw para texto */
+    border-radius: 50vw !important;
     min-width: 5vw;
+    width: auto;
     margin-bottom: 1vw;
-    color: var(--negro);
-    background-color: white;
-    font-size: 1.2em;
-    font-family: var(--parrafos);
     padding: 10px 20px;
+    background-color: var(--blanco);
+    color: var(--negro);
+    font-size: 1.2em;
+    font-family: var(--font-parrafos);
     cursor: pointer;
-    transition: background-color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 button:hover {
-    color: var(--blanco);
-    transition: 0.5s;
     background-color: var(--negro);
-    /* Un negro ligeramente distinto para el feedback */
-}
-
-/* Footer */
-footer {
     color: var(--blanco);
-    font-family: var(--parrafos);
-    width: 100%;
-    padding: 3vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: center;
-    gap: 8vw;
 }
 
-.info-footer {
-    margin: 0;
-    margin: 0px;
-background-color: #ffffff;
- color: #4e2a4f;
-    padding: 1vw;
-    border-radius: 50px;
-    font-size: 1.5rem;
-    .bi{
-        font-size: 1.5rem;
-         color: #4e2a4f
-    }
-
-}
-.info-footer:hover {
-    
-    transform: translateY(-4px);
-    background-color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55), 0 0 20px rgba(73, 73, 73, 0.25);
-    
-    
-}
-
-/* Aptitudes */
+/* ============================================
+   APTITUDES
+   ============================================ */
 .aptitudes__container {
     display: flex;
     flex-direction: column;
@@ -315,7 +284,7 @@ background-color: #ffffff;
 .aptitudes__titulo {
     font-size: 2.5rem;
     font-weight: 400;
-    font-family: var(--titulos);
+    font-family: var(--font-titulos);
     color: var(--blanco);
 }
 
@@ -327,45 +296,64 @@ background-color: #ffffff;
 
 .aptitud {
     padding: 0.5rem 0.9rem;
-    border: 3px solid white;
+    border: 3px solid var(--blanco);
     border-radius: 50px;
-    /* Simplificado de 5vw */
-    font-family: var(--parrafos);
-
+    font-family: var(--font-parrafos);
     color: var(--blanco);
     font-size: 1.2rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: default;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .aptitud:hover {
+    border-width: 3.5px;
     transform: translateY(-4px);
-    border: 3.5px solid white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55), 0 0 20px rgba(73, 73, 73, 0.25);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55),
+                0 0 20px rgba(73, 73, 73, 0.25);
 }
 
-il {
-    font-family: var(--titulos);
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    width: 100%;
+    padding: 3vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 8vw;
+    color: var(--blanco);
+    font-family: var(--font-parrafos);
+}
+
+.info-footer {
+    padding: 1vw;
+    background-color: var(--blanco);
+    color: var(--accent);
+    border-radius: 50px;
     font-size: 1.5rem;
-
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-li {
-    font-family: var(--parrafos);
-    font-size: 1rem;
-    font-weight: 500;
-    list-style: none;
+.info-footer .bi {
+    font-size: 1.5rem;
+    color: var(--accent);
 }
 
+.info-footer:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.55),
+                0 0 20px rgba(73, 73, 73, 0.25);
+}
 
+/* ============================================
+   RESPONSIVE — MOBILE (300px – 1000px)
+   ============================================ */
+@media screen and (max-width: 1000px) {
 
-
-
-
-
-@media screen and (min-width:300px) and (max-width:1000px) {
-
-    /*header*/
+    /* Header */
     header {
         gap: 7vw;
         padding: 5vw;
@@ -373,11 +361,10 @@ li {
 
     .enlace_seccion {
         font-size: 2.9vw;
-        padding: 0.5rem 0.5rem;
+        padding: 0.5rem;
     }
 
-    /*introducción*/
-
+    /* Intro */
     .foto-mia {
         width: 50vw;
         margin: 5vw 0;
@@ -385,84 +372,65 @@ li {
 
     .nombre,
     .puesto {
-        margin: 3vw 0;
         font-size: 7vw;
+        margin: 3vw 0;
         padding: 2vw;
     }
 
-    /*iconos*/
+    /* Redes */
     .redes {
         gap: 7vw;
-        margin: 2vw 0 6vw 0;
+        margin: 2vw 0 6vw;
     }
 
     .bi {
-
         font-size: 10vw;
     }
 
-    /*divisiones*/
+    /* Divisiones */
     .division {
         gap: 6vw;
-        padding: 8vw 8vw;
+        padding: 8vw;
     }
 
     .titulo__division {
         font-size: 10vw;
     }
 
-    #proyectos {
-        background-color: var(--azul);
-    }
-
-    #habilidades {
-        background-color: var(--gris);
-    }
-
-    #procesDis {
-        background-color: var(--azul);
-        color: var(--blanco);
-        gap: 3vw;
-    }
-
+    /* Tipografía */
     strong {
         font-size: 5vw;
-        font-family: var(--titulos);
     }
 
     dl p {
         font-size: 5vw;
-        font-family: var(--titulos);
         text-align: center;
     }
 
     dd {
         font-size: 4vw;
-        font-family: var(--parrafos);
-    }
-
-    .carousel,
-    .carousel img {
-        width: 90vw;
-        border-radius: 16px;
     }
 
     .texto__sobre-mi {
         font-size: 5vw;
-        margin: -3vw 0 3vw 0;
+        margin: -3vw 0 3vw;
     }
 
-    /*cards*/
+    /* Carousel */
+    .carousel,
+    .carousel img {
+        width: 90vw;
+    }
+
+    /* Cards */
     .carrd {
         width: 90vw;
         border-radius: 8px;
     }
 
     .img__card {
-        width: 100%;
         height: auto;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
+        border-radius: 8px 8px 0 0;
     }
 
     .titulo__card {
@@ -470,31 +438,32 @@ li {
     }
 
     .descripcion__card {
-        padding: 0 5vw;
         font-size: 5vw;
+        padding: 0 5vw;
         margin-top: -3vw;
     }
 
+    /* Botones */
     a button {
         border: none;
         border-radius: 8px;
         width: 20vw;
-        margin: 0vw 0 5vw 0;
-        color: var(--blanco);
-        background-color: var(--negro);
-        font-size: 1.2em;
-        font-family: var(--parrafos);
+        margin: 0 0 5vw;
         padding: 10px;
+        background-color: var(--negro);
+        color: var(--blanco);
+        font-size: 1.2em;
+        font-family: var(--font-parrafos);
     }
 
+    /* Footer */
     footer {
         padding: 5vw;
         gap: 2vw;
-        text-align: center;
     }
-    .info-footer{
+
+    .info-footer {
         padding: 4vw;
         margin-top: 2vw;
     }
-
 }

@@ -16,6 +16,9 @@
     --negro: #252525;
     --blanco: #ffffff;
     --gris: #98989E;
+    --morado1:#2d1e2f;
+    --morado2:#3e2f5b;
+    --morado3:#4e2a4f;
     --font-parrafos: "Koulen", sans-serif;
     --font-titulos: "Electrolize", sans-serif;
     --bg-gradient: linear-gradient(135deg, #2d1e2f 20%, #3e2f5b 50%, #4e2a4f 100%);
@@ -200,69 +203,144 @@ header {
 /* ============================================
    CARDS
    ============================================ */
-.carrd {
-    width: 18vw;
-    background-color: var(--blanco);
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 1vw;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3),
-                0 0 12px rgba(255, 255, 255, 0.15);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+ /* 1. CONTENEDOR FLEXBOX */
+.pcard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8vw 8vw;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.carrd:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.75),
-                0 0 30px rgba(48, 48, 48, 0.45);
+/* 2. LA TARJETA */
+.pcard {
+  width: 400px; 
+  background: #ffffff;
+  border: 0.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
-.img__card {
+.pcard:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 0, 0, 0.22);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+/* 3. IMAGEN CON PROPORCIÓN FIJA */
+.pcard__img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 10; 
+  overflow: hidden;
+  background: #f4f4f2;
+}
+
+.pcard__img-wrap img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.pcard:hover .pcard__img-wrap img {
+  transform: scale(1.05);
+}
+
+/* 4. CUERPO Y TEXTOS (Aquí quitamos el límite) */
+.pcard__body {
+  padding: 1.25rem 1.25rem 0.5rem; /* Ajuste ligero de padding inferior */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pcard__tag {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--morado2, #6a1b9a);
+  color: #fff;
+  width: fit-content;
+}
+
+.pcard__title {
+  font-family: var(--font-titulos, sans-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.pcard__desc {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6; /* Un poco más de espacio para legibilidad */
+  color: #3b3b3b;
+  margin: 0;
+  /* CAMBIO: Eliminamos el display: -webkit-box para que el texto salga completo */
+  height: auto; 
+  overflow: visible;
+}
+
+/* 5. FOOTER Y BOTONES */
+.pcard__footer {
+  padding: 1rem 1.25rem 1.25rem; /* Separación consistente */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Empuja el footer siempre al final */
+}
+
+.pcard__skills {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap; /* Por si tienes muchos tags de skills */
+}
+
+.pcard__skill {
+  font-size: 13px;
+  background: var(--morado2);
+  color: var(--blanco);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.pcard__btn {
+  padding: 6px 12px;
+  border: 2px solid var(--morado1);
+  border-radius: 8px;
+  font-size: 12px;
+  text-decoration: none;
+  color: var(--morado1);
+  transition: 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.pcard__btn:hover {
+  background: var(--morado1);
+  color: #fff;
+}
+
+/* 6. RESPONSIVIDAD */
+@media (max-width: 600px) {
+  .pcard {
     width: 100%;
-    height: 15vw;
-    object-fit: cover;
-    border-radius: 25px 25px 0 0;
-}
-
-.titulo__card {
-    color: var(--negro);
-    font-family: var(--font-titulos);
-    font-size: 2vw;
-    text-align: center;
-    margin-top: 2vw;
-}
-
-.descripcion__card {
-    color: var(--negro);
-    font-family: var(--font-parrafos);
-    font-size: 1vw;
-    padding: 5vw 2vw;
-    margin-top: -0.5vw;
-}
-
-/* ============================================
-   BOTONES
-   ============================================ */
-button {
-    border: 3px solid var(--negro);
-    border-radius: 50vw !important;
-    min-width: 5vw;
-    width: auto;
-    margin-bottom: 1vw;
-    padding: 10px 20px;
-    background-color: var(--blanco);
-    color: var(--negro);
-    font-size: 1.2em;
-    font-family: var(--font-parrafos);
-    cursor: pointer;
-    transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-button:hover {
-    background-color: var(--negro);
-    color: var(--blanco);
+    max-width: 450px; /* Un poco más ancho en móvil para el texto */
+  }
+  
+  .pcard-container {
+    gap: 1.5rem;
+    padding: 15px;
+  }
 }
 
 /* ============================================
@@ -423,38 +501,7 @@ footer {
     }
 
     /* Cards */
-    .carrd {
-        width: 90vw;
-        border-radius: 8px;
-    }
-
-    .img__card {
-        height: auto;
-        border-radius: 8px 8px 0 0;
-    }
-
-    .titulo__card {
-        font-size: 7vw;
-    }
-
-    .descripcion__card {
-        font-size: 5vw;
-        padding: 0 5vw;
-        margin-top: -3vw;
-    }
-
-    /* Botones */
-    a button {
-        border: none;
-        border-radius: 8px;
-        width: 20vw;
-        margin: 0 0 5vw;
-        padding: 10px;
-        background-color: var(--negro);
-        color: var(--blanco);
-        font-size: 1.2em;
-        font-family: var(--font-parrafos);
-    }
+    
 
     /* Footer */
     footer {
@@ -466,4 +513,44 @@ footer {
         padding: 4vw;
         margin-top: 2vw;
     }
+     .pcard__img-wrap {
+    height: 180px;
+  }
+  .pcard__title {
+    font-size: 18px;
+  }
+  .pcard__footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .pcard__btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

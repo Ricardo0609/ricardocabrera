@@ -204,6 +204,11 @@ header {
    CARDS
    ============================================ */
  /* 1. CONTENEDOR FLEXBOX */
+.pcard__desc strong {
+    font-weight: 500;
+    color: #1a1a1a;
+  }
+ 
 .pcard-container {
   display: flex;
   flex-wrap: wrap;

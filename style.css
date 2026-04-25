@@ -218,7 +218,7 @@ header {
 
 /* 2. LA TARJETA */
 .pcard {
-  width: 400px; 
+  width: 350px; 
   background: #ffffff;
   border-radius: 16px;
   overflow: hidden;

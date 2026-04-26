@@ -525,6 +525,7 @@ footer {
     font-size: 18px;
   }
   .pcard__footer {
+    gap: 2vw;
     flex-direction: column;
     align-items: flex-start;
   }
